@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cafe-bot
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: node bot.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: PHONE_NUMBER_ID
+        sync: false
+      - key: VERIFY_TOKEN
+        value: cafe_secret_token
